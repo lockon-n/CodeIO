@@ -131,7 +131,7 @@ print("[JSON IOS START]" + jsoniolist + "[JSON IOS END]")
 
 def process_one_item(res):
     
-    maincode = eulerlib_prefix+'\n\n'+res['maincode']
+    maincode = res['maincode']
     io_desc = res['io_desc']
     inputgencode = res['inputgencode']
     problem_statement = res['problem_statement']
