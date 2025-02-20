@@ -165,7 +165,9 @@ python ./src/batched_api_inference.py \
 bash ./scripts/pipeline_check.sh \
 data/rawcode_1k_parsed.jsonl \
 data/codeio_1k_gens.jsonl \
-data/codeio_1k_gens_verified.jsonl
+data/codeio_1k_gens_verified.jsonl \
+python \
+./temp/temp/temp
 ```
 In the bash script we run the verification for several times to try our best avoid the runtime effect brought by multi-processing execution (e.g. timeout). This is helpful for large scale verification. You can change the number of process to match your machine (e.g. more if you have a large number of CPUs and a large memory).
 
@@ -193,7 +195,9 @@ python ./src/batched_api_inference.py \
 bash ./scripts/pipeline_check.sh \
 data/rawcode_1k_parsed.jsonl \
 data/codeio_1k_gens_rev.jsonl \
-data/codeio_1k_gens_rev_verified.jsonl
+data/codeio_1k_gens_rev_verified.jsonl \
+python \
+./temp/temp/temp
 ```
 ##### Step 6.4: Final Data
 ```

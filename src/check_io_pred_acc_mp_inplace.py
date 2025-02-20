@@ -9,6 +9,10 @@ import json
 from multiprocessing.pool import ThreadPool
 from collections import defaultdict
 
+# global vars
+python_path = "python"
+run_path = "./temp/temp/temp"
+
 # Your check_io_pred_acc function uses source_2_data
 def check_io_pred_acc(item):
     output = item["output"]
@@ -31,7 +35,7 @@ def check_io_pred_acc(item):
             return {"status":"no answer","message":"No field 'input' in the last json!"}
         pred_input = last_json["input"]
         candio = {'input': pred_input, 'output': needed_oriio['output']}
-        res = check_input(needed_oriitem['refcode'], candio, needed_oriitem['funcname'], solution_prefix=solution_prefix)
+        res = check_input(needed_oriitem['refcode'], candio, needed_oriitem['funcname'], solution_prefix=solution_prefix, used_python_path = python_path, run_path=run_path)
         if "exception_type" in res:
             res['messages'] = f"[{res['exception_type']}] {res['message']}"
         return res
@@ -54,6 +58,8 @@ def main():
     parser.add_argument("--batchsize", type=int, help="The batch size.", default=1024)
     parser.add_argument("--write_batchsize", type=int, help="The batch size of batch size", default=8)
     parser.add_argument("--num_processes", type=int, help="The number of processes.", default=16)
+    parser.add_argument('--python_path', type=str, default="python")
+    parser.add_argument('--run_path', type=str, default="./temp/temp/temp")   
     args = parser.parse_args()
 
     pred_file_name = args.pred_file_name
@@ -61,6 +67,10 @@ def main():
     write_batchsize = args.write_batchsize
     global parsed_ios
     parsed_ios = read_jsonl(args.parsed_file_name)
+
+    global python_path, run_path
+    python_path = args.python_path
+    run_path = args.run_path
 
     print(f"Reading data from {pred_file_name}...")
     dt = read_jsonl(pred_file_name)
