@@ -379,8 +379,8 @@ def extract_input(ss):
 
 def check_input_legacy(refcode, io, funcname, 
                 solution_prefix="", 
-                used_python_path="/hf_shared/hfai_envs/lijunlong/jl_py311_0/bin/python", 
-                run_path = "/weka-jd/prod/deepseek/permanent/shared/lijunlong/temp_python_codes/runpath",
+                used_python_path="x", 
+                run_path = "x",
                 runtime_limit=5,
                 bypass=False,
                 ):
@@ -456,8 +456,8 @@ def check_input_legacy(refcode, io, funcname,
 
 def check_input(refcode, io, funcname, 
                 solution_prefix="", 
-                used_python_path="/hf_shared/hfai_envs/lijunlong/jl_py311_0/bin/python", 
-                run_path="/weka-jd/prod/deepseek/permanent/shared/lijunlong/temp_python_codes/runpath",
+                used_python_path="x", 
+                run_path="x",
                 runtime_limit=5,
                 bypass=False,
                 ):
