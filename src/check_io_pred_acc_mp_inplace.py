@@ -72,6 +72,9 @@ def main():
     python_path = args.python_path
     run_path = args.run_path
 
+    if not os.path.exists(run_path):
+        os.makedirs(run_path,exist_ok=True)
+
     print(f"Reading data from {pred_file_name}...")
     dt = read_jsonl(pred_file_name)
     total_num_items = len(dt)

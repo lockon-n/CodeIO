@@ -80,6 +80,9 @@ def main():
     python_path = args.python_path
     run_path = args.run_path
 
+    if not os.path.exists(run_path):
+        os.makedirs(run_path,exist_ok=True)
+
     # Load dt as a generator
     dt = load_jsonl_yield(pred_file_name)  # This is a generator object
 
