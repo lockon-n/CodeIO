@@ -40,6 +40,8 @@ CodeI/O is a novel approach that transforms code-based reasoning patterns into n
 |Dataset|Link|
 |-|-|
 |CodeI/O-PythonEdu-Reasoning|[🤗](https://huggingface.co/datasets/hkust-nlp/CodeIO-Pyedu-Reasoning)|
+|CodeI/O-PythonEdu-Raw|[🤗](https://huggingface.co/datasets/hkust-nlp/CodeIO-PyEdu-Reasoning-Raw)|
+|LeetCode-O Benchmark|[🤗](https://huggingface.co/datasets/hkust-nlp/LeetCode-O)|
 
 Due to our collaborators' compliance requirements, we only release the PythonEdu-Reasoning subset of the CodeI/O(++) dataset.
 
